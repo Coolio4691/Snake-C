@@ -5,15 +5,15 @@ include(CTest)
 enable_testing()
 
 add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/src/main.c)
-
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/include/)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
-set(CMAKE_C_STANDARD gnu99)
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+set(CMAKE_C_STANDARD gnu99)
 
 find_library(LIBRT rt) 
 if(LIBRT)
