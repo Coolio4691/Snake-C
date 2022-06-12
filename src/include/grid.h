@@ -53,6 +53,7 @@ void printGrid() {
         int backgroundColour = BLACK;
         char* c = (char*) malloc(1);
         c[0] = ' '; // allow free(c);
+        c[1] = 0;
         
         if(isOnBorder(i)) {
             colour = GRID_BORDER_COLOUR;
@@ -74,7 +75,7 @@ void printGrid() {
             free(c);
 
             int sz = strSize("●\0");
-            c = malloc(sz);
+            c = (char*)malloc(sz);
             strcpy(c, "●\0");
 
             colour = FOOD_COLOUR;
